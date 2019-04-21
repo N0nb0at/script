@@ -59,7 +59,7 @@ func copyFile(sDirPath, tDirPath string) (written int64, err error) {
 		return
 	}
 	defer src.Close()
-	dst, err := os.OpenFile(tDirPath, os.O_WRONLY|os.O_CREATE, os.ModePerm)
+	dst, err := os.OpenFile(tDirPath, os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {
 		return
 	}
